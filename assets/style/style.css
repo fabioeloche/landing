@@ -1,0 +1,596 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+/* Asterisk wildcard selector to override default styles added by the browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* General styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    font-family: 'Oswald', sans-serif;
+    background-color: #000000;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+/* Header styles */
+header {
+    background-color: #000000;
+    padding: 0 1rem;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+/* Main content */
+main {
+    flex: 1 0 auto;
+    margin-top: 30px; /* Add margin to prevent content from overlapping the header */
+    display: flex;
+    flex-direction: column;
+}
+/* Navbar with dropdown toggle */
+nav {
+    position: absolute;
+    background-color: #000000;
+    width: 100%;
+    left: 0;
+    padding: 0 1rem;
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: none;
+    top: 100%;
+}
+
+/* Nav toggle */
+#nav-toggle:checked~nav {
+    display: block;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
+}
+#menu {
+    font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+}
+
+#menu > li {
+    margin: 1.5rem;
+    font-size: 150%;
+}
+
+.active {
+    border-bottom: 2.5px solid #dadada;
+}
+/* Hero section */
+#hero {
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000; /* Ensure background color is applied */
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the area */
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure it stays behind the text */
+}
+/* Cover Text */
+#cover-text {
+    z-index: 2; /* Ensure the cover text appears above the background video */
+    position: absolute; /* Allow precise positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    text-align: center; /* Center-align the text */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 1rem; /* Add padding inside the cover text */
+    width: 35%; 
+    border-radius: 10px; /* Slightly round the corners */
+    font-size: 2rem; /* Set the default font size */
+}
+
+/* Gradient Text for h2 */
+#cover-text h2 {
+    font-size: 2.5rem;
+    color: transparent;
+    background: linear-gradient(90deg, orange, white);
+    margin: 0 0 1rem 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Gradient Text for h3 */
+#cover-text h3 {
+    font-size: 2rem;
+    color: transparent;
+    background: linear-gradient(90deg, orange, white);
+    margin: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Benefit section */
+#benefit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 40px;
+    text-align: center;
+    min-height: 50vh;
+}
+
+#benefit h2 {
+    font-size: 1.5rem;
+    color: transparent;
+    background: linear-gradient(90deg, orange, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 80%;
+    margin: 20px;
+    line-height: 1.5;
+}
+/* Button styles */
+#signup-button {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 2px solid orange;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#signup-button:hover {
+    background-color: #333333;
+    border-color: #ff6600;
+}
+/* Video container with gradient border */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    margin-top: 40px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, orange, yellow);
+    padding: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+}
+
+.video-description {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 30px;
+    font-size: 1.6rem;
+}
+/* Heading section */
+.heading_section {
+    text-align: center;
+    color: #fff;
+    margin-top: 30px;
+    font-size: 40px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+/* Wrapper for central alignment */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grid container layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.grid-item {
+    border: 4px solid #943f19;
+    font-size: 18px;
+    border-radius: 20px;
+    min-height: 170px;
+    padding: 20px 10px;
+}
+
+/* Section wrapper for overall spacing */
+.section-wrapper {
+    padding-top: 100px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.section-item-image {
+    float: left;
+    display: inline;
+    width: 40%;
+    text-align: center;
+}
+
+.section-item-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-item-text {
+    float: left;
+    display: inline;
+    width: 60%;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.section-item-text .head {
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.signup-area {
+    text-align: center;
+}
+
+.join-button:hover {
+    background-color: orange;
+    color: black;
+}
+/* Large sign-up button */
+.signup-button-max {
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    border-radius: 22px;
+    border: 3px solid #943f19;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.signup-button-max:hover {
+    background: #161616;
+}
+
+.signup-text {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+/* Social networks section */
+.social-networks {
+    text-align: center;
+}
+
+.social-icon {
+    display: inline;
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+/* Specific icon colors */
+.marker_text { color: #db5e26; }
+.social-icon .fa-x-twitter { color: #fff; }
+.social-icon .fa-facebook-square { color: #0552d1; }
+.social-icon .fa-youtube-square { color: #FF0000; }
+    
+
+/* Form */
+#signup {
+    background-size: cover;
+    background-position: 75%;
+    padding: 20px 10% 0 10%;
+    flex-grow: 1;
+}
+.inner-sf{
+    background-color: #000;
+    padding: 15px;
+    border-radius: 10px;
+}
+#signup-form>h2 {
+    color: #fafafa;
+    margin-bottom: 20px;
+}  
+.text-input {
+    background: transparent;
+    color: #fafafa;
+    width: 100%;
+    height: 25px;
+    margin: 5px 0 20px 0;
+    border: 1px solid #fafafa;
+    border-radius: 2px;
+    padding: 0 5px;
+}       
+ 
+
+.join-button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid orange;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.join-button:hover {
+     background-color: orange;
+     color: black;
+        }
+
+#social-networks {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+#social-networks i {
+    font-size: 160%;
+    padding: 5%;
+    color: #3a3a3a;
+}
+#signup-form {
+    max-width: 400px;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    border-radius: 15px;
+    z-index: 1;
+    transform: translateY(-50%);
+    color: #ffffff;
+    padding: 7px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, orange, yellow);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+.section-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.section-item-image {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-item-text {
+    width: 100%;
+    text-align: center;
+}
+footer{
+    position: relative;
+    z-index: 1;
+    background: #000000;
+}
+#menu a:hover{
+    border-bottom: 1px solid #3a3a3a;
+}
+/* New Styles for Layout Adjustment */
+.expense-solution-section .section-wrapper, .signup-area .section-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.expense-solution-section .section-item-image, .signup-area .section-item-image {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.expense-solution-section .section-item-text, .signup-area .section-item-text {
+    width: 100%;
+    text-align: center;
+}
+/* -----Start::Media Query---- */
+@media screen and (min-width: 768px) {
+    nav {
+      display: block;
+      position: relative;
+      box-shadow: none;
+      width: fit-content;
+      padding-right: 1rem;
+    }
+    #menu {
+      display: flex;
+      background-color: #000;
+    }
+    #menu > li {
+        padding-left: 1rem;
+        font-size: 1.5rem;
+    }
+    .nav-toggle-label {
+        display: none;
+    }
+    #logo {
+        font-size: 2rem;
+        line-height: 3.125rem;
+        margin: 0;
+        color: #FFF;
+        text-align: center;
+        width: 100%;
+    }
+    main {
+        margin-top: 90px;
+    }
+    #hero {
+        height: 600px;
+    }
+    #cover-text {
+        max-width: 40%;
+        font-size: 2.5rem;
+    }
+    #benefit h2 {
+        font-size: 2.5rem;
+        width: 80%;
+        margin-top: 40px;
+    }
+
+    /* Button styles */
+    #signup-button {
+        display: inline-block;
+        background-color: #000;
+        color: #fff;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        text-decoration: none;
+        border-radius: 25px;
+        border: 2px solid orange;
+        margin-top: 1.5rem;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    #signup-button:hover {
+        background-color: #333;
+        border-color: #ff6600;
+    }
+
+    .video-container {
+        height: 500px;
+        margin-top: 80px;
+    }
+    .video-description {
+        font-size: 2rem;
+        width: 60%;
+    }
+    #signup {
+        background-position: center;
+        position: relative;
+    }
+    .text-input:hover {
+        border-color: #f16c6b;
+    }
+
+    .expense-solution-section .section-item-image,
+    .signup-area .section-item-image {
+        width: 40%;
+        float: left;
+    }
+
+    .expense-solution-section .section-item-text,
+    .signup-area .section-item-text {
+        width: 60%;
+        float: left;
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    #logo {
+        font-size: 1.25rem;
+    }
+    #menu > li {
+        padding-left: 0;
+        margin: 20px;
+    }
+    header a {
+        font-size: 1.125rem;
+    }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    #signup {
+        padding: 3.125rem 0.9375rem;
+    }
+    .inner-sf h2 {
+        font-size: 1rem;
+        margin-bottom: 0.9375rem;
+    }
+    #cover-text {
+        width: 100%;
+    }
+    #benefit {
+        margin: 0;
+    }
+    .social-networks {
+        margin: 0.625rem 0;
+    }
+    #signup-form {
+        max-width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(90deg, orange, yellow);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        width: 90%;
+    }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-item-image, 
+    .section-item-text {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .section-item-image,
+    .section-item-text {
+        width: 100%;
+    }
+}
+/* -----End::Media Query---- */
